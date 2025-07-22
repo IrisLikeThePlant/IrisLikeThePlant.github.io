@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'Iris Design Thoughts'
+title = '''Iris' Design Corner'''
 theme = "hugo-bearcub"
 copyright = "IrisLikeThePlant (CC BY 4.0)"
 defaultContentLanguage = "en"

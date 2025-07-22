@@ -1,7 +1,7 @@
 +++
 author = "Iris"
 title = "Developing a Roguelike - Part 1"
-date = "2025-07-21"
+date = "2025-07-22"
 description = "Starting development on the RoguelikeDev challenge"
 tags = [
     "roguelike",
@@ -163,8 +163,8 @@ The only other noteworthy thing I did was to make movement be reliant on the mou
 move multiple tiles in a single turn.
 
 This is what I have so far: four units that can move across the map, and a line to show which path they'd take
-(there's no actual pathfinding yet though).
+(there's no actual pathfinding yet though). 
 
+![Gif of the game](game.gif)
 
-
-If you want, you can check out the full repo [at this link]()
+If you want, you can check out the full repo [at this link](https://github.com/IrisLikeThePlant/Sigmarch)

@@ -1,21 +1,97 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Blog on Iris&#39; Design Corner</title>
-    <link>http://localhost:1313/blog/</link>
-    <description>Recent content in Blog on Iris&#39; Design Corner</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>IrisLikeThePlant (CC BY 4.0)</copyright>
-    <lastBuildDate>Mon, 21 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Developing a Roguelike - Part 1</title>
-      <link>http://localhost:1313/blog/01_developing_a_roguelike_part_1/</link>
-      <pubDate>Mon, 21 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/01_developing_a_roguelike_part_1/</guid>
-      <description>&lt;p&gt;While I have been browsing the &lt;a href=&#34;reddit.com/r/roguelikedev&#34;&gt;RoguelikeDev&lt;/a&gt; subreddit for a few years now, I&amp;rsquo;ve always&#xA;been more of a lurker than an active member of the community. I&amp;rsquo;ve decided this time it would be different.&lt;/p&gt;&#xA;&lt;p&gt;I find roguelikes extremely interesting. I enjoy &lt;em&gt;crunchy&lt;/em&gt; games, I enjoy complicated mechanics, and I love learning.&#xA;Roguelikes are usually perfect for this by their very nature. Complexity for the sake of complexity is bad and yadda yadda,&#xA;yes, and I like to turn off my brain after work as much as the next person, but sometimes you just want to bite down&#xA;on some juicy system and I think they provide that in spades.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>While I have been browsing the <a href="reddit.com/r/roguelikedev">RoguelikeDev</a> subreddit for a few years now, I&rsquo;ve always
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Developing a Roguelike - Part 1 | Iris&#39; Design Corner</title>
+<meta name="title" content="Developing a Roguelike - Part 1" />
+<meta name="description" content="Starting development on the RoguelikeDev challenge" />
+<meta name="author" content="Iris" />
+<meta name="keywords" content="roguelike,C#," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/blog/post1/">
+  <meta property="og:site_name" content="Iris&#39; Design Corner">
+  <meta property="og:title" content="Developing a Roguelike - Part 1">
+  <meta property="og:description" content="Starting development on the RoguelikeDev challenge">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-07-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-21T00:00:00+00:00">
+    <meta property="article:tag" content="Roguelike">
+    <meta property="article:tag" content="C#">
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Developing a Roguelike - Part 1">
+  <meta name="twitter:description" content="Starting development on the RoguelikeDev challenge">
+
+
+  
+  
+  <meta itemprop="name" content="Developing a Roguelike - Part 1">
+  <meta itemprop="description" content="Starting development on the RoguelikeDev challenge">
+  <meta itemprop="datePublished" content="2025-07-21T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-07-21T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2262">
+  <meta itemprop="keywords" content="Roguelike,C#">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+    
+    <link href="/syntax.min.css" rel="stylesheet">
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Iris&#39; Design Corner</h1></a>
+<nav>
+  <a href="/">Home</a>
+
+  <a href="/blog/">Blog</a>
+
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Developing a Roguelike - Part 1</h1>
+<p class="byline">
+  <time datetime='2025-07-21' pubdate>
+    2025-07-21
+  </time>
+  · Iris
+</p>
+
+<content>
+  <p>While I have been browsing the <a href="reddit.com/r/roguelikedev">RoguelikeDev</a> subreddit for a few years now, I&rsquo;ve always
 been more of a lurker than an active member of the community. I&rsquo;ve decided this time it would be different.</p>
 <p>I find roguelikes extremely interesting. I enjoy <em>crunchy</em> games, I enjoy complicated mechanics, and I love learning.
 Roguelikes are usually perfect for this by their very nature. Complexity for the sake of complexity is bad and yadda yadda,
@@ -145,9 +221,26 @@ actor which is <em>also</em> in Actors, but this seems a bit alien to me since I
 move multiple tiles in a single turn.</p>
 <p>This is what I have so far: four units that can move across the map, and a line to show which path they&rsquo;d take
 (there&rsquo;s no actual pathfinding yet though).</p>
-<p><img src="game.gif" alt="Gif of the game"></p>
 <p>If you want, you can check out the full repo <a href="">at this link</a></p>
-]]></content:encoded>
-    </item>
-  </channel>
-</rss>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/tags/roguelike/">#roguelike</a>
+  
+    <a class="blog-tags" href="/tags/c%23/">#c#</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+  IrisLikeThePlant (CC BY 4.0) | Made with <a href="https://github.com/clente/hugo-bearcub">Bear Cub</a>
+</small></footer>
+
+    
+</body>
+
+</html>
