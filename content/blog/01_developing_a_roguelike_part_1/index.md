@@ -9,7 +9,7 @@ tags = [
 ]
 +++
 
-While I have been browsing the [RoguelikeDev](reddit.com/r/roguelikedev) subreddit for a few years now, I've always
+While I have been browsing the [RoguelikeDev](https://reddit.com/r/roguelikedev) subreddit for a few years now, I've always
 been more of a lurker than an active member of the community. I've decided this time it would be different.
 
 I find roguelikes extremely interesting. I enjoy _crunchy_ games, I enjoy complicated mechanics, and I love learning.

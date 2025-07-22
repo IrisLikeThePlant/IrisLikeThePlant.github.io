@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://irisliketheplant.github.io/'
 languageCode = 'en-us'
 title = '''Iris' Design Corner'''
 theme = "hugo-bearcub"
