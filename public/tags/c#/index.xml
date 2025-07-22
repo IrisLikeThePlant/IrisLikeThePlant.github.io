@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>IrisLikeThePlant (CC BY 4.0)</copyright>
-    <lastBuildDate>Mon, 21 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/c%23/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Developing a Roguelike - Part 1</title>
       <link>http://localhost:1313/blog/01_developing_a_roguelike_part_1/</link>
-      <pubDate>Mon, 21 Jul 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/01_developing_a_roguelike_part_1/</guid>
       <description>&lt;p&gt;While I have been browsing the &lt;a href=&#34;reddit.com/r/roguelikedev&#34;&gt;RoguelikeDev&lt;/a&gt; subreddit for a few years now, I&amp;rsquo;ve always&#xA;been more of a lurker than an active member of the community. I&amp;rsquo;ve decided this time it would be different.&lt;/p&gt;&#xA;&lt;p&gt;I find roguelikes extremely interesting. I enjoy &lt;em&gt;crunchy&lt;/em&gt; games, I enjoy complicated mechanics, and I love learning.&#xA;Roguelikes are usually perfect for this by their very nature. Complexity for the sake of complexity is bad and yadda yadda,&#xA;yes, and I like to turn off my brain after work as much as the next person, but sometimes you just want to bite down&#xA;on some juicy system and I think they provide that in spades.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>While I have been browsing the <a href="reddit.com/r/roguelikedev">RoguelikeDev</a> subreddit for a few years now, I&rsquo;ve always
@@ -145,8 +145,146 @@ actor which is <em>also</em> in Actors, but this seems a bit alien to me since I
 move multiple tiles in a single turn.</p>
 <p>This is what I have so far: four units that can move across the map, and a line to show which path they&rsquo;d take
 (there&rsquo;s no actual pathfinding yet though).</p>
-<p>ss</p>
 <p><img src="game.gif" alt="Gif of the game"></p>
+<p>If you want, you can check out the full repo <a href="https://github.com/IrisLikeThePlant/Sigmarch">at this link</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Developing a Roguelike - Part 1</title>
+      <link>http://localhost:1313/blog/developing_a_roguelike_part_01/</link>
+      <pubDate>Mon, 21 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/developing_a_roguelike_part_01/</guid>
+      <description>&lt;p&gt;While I have been browsing the &lt;a href=&#34;reddit.com/r/roguelikedev&#34;&gt;RoguelikeDev&lt;/a&gt; subreddit for a few years now, I&amp;rsquo;ve always&#xA;been more of a lurker than an active member of the community. I&amp;rsquo;ve decided this time it would be different.&lt;/p&gt;&#xA;&lt;p&gt;I find roguelikes extremely interesting. I enjoy &lt;em&gt;crunchy&lt;/em&gt; games, I enjoy complicated mechanics, and I love learning.&#xA;Roguelikes are usually perfect for this by their very nature. Complexity for the sake of complexity is bad and yadda yadda,&#xA;yes, and I like to turn off my brain after work as much as the next person, but sometimes you just want to bite down&#xA;on some juicy system and I think they provide that in spades.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>While I have been browsing the <a href="reddit.com/r/roguelikedev">RoguelikeDev</a> subreddit for a few years now, I&rsquo;ve always
+been more of a lurker than an active member of the community. I&rsquo;ve decided this time it would be different.</p>
+<p>I find roguelikes extremely interesting. I enjoy <em>crunchy</em> games, I enjoy complicated mechanics, and I love learning.
+Roguelikes are usually perfect for this by their very nature. Complexity for the sake of complexity is bad and yadda yadda,
+yes, and I like to turn off my brain after work as much as the next person, but sometimes you just want to bite down
+on some juicy system and I think they provide that in spades.</p>
+<p>I&rsquo;ve also always been fascinated with the idea of creating <em>my own</em> roguelike. The RoguelikeDev community has two
+yearly events that I&rsquo;m aware of: 7DRL, a 7 day game jam, and &lsquo;RoguelikeDev Does The Complete Roguelike Tutorial&rsquo;, an
+event where the aim is, like the name suggests, to complete the tutorial to get a basic roguelike started. In fact,
+there&rsquo;s several versions of the tutorials, some more complete than others, depending on the language and framework
+you prefer to use.</p>
+<p>This year I felt particularly inspired to be part of it, so I decided to give it a shot myself.</p>
+<h3 id="the-basic-premise-aka-i-yap-about-roguelikes">The Basic Premise (aka I Yap About Roguelikes)</h3>
+<p>The tutorial has you go through the motions of creating a very old school roguelike&ndash;you move around on a map made of
+square rooms and corridors connecting them, you bump into monsters, you go down to the next floor. Rinse, repeat.
+This is great to get you started if you haven&rsquo;t done anything of the sort before! But I decided to challenge myself,
+and try out something different.</p>
+<p>The main concept for my project is pretty simple, and something I&rsquo;ve been thinking about for a while. All roguelikes
+I&rsquo;ve seen have you play as a single character, despite orginally being based on TTRPGs, which usually have a party of
+multiple people. How would a roguelike play, if you could control more than one character? I&rsquo;m not sure I&rsquo;ve seen
+this idea explored before. Usually, if you have companions, you have limited control over them.</p>
+<p>With that as the main focus, I started thinking about the game at large. I tried to imagine what
+exploration would be like, and how a combat encounter would play out. However, they both seemed like they would
+be pretty uninteresting. Exploration would probably be more annoying than anything else if you had to micromanage 4
+characters at the same time just to go from point A to point B. I could see some occasions where it might turn out
+to be compelling, for example by having the rogue scout ahead in stealth and have the party follow behind, or
+separate them in order to solve a puzzle, or approach a situation from a different angle. But would this be interesting
+enough to overlook the boring part?</p>
+<p>Combat is a bit trickier. Generally speaking, I dislike the roguelike approach to combat. It often revolves around
+placing yourself in a way that you can funnel enemies through a single tile, then bumping against them. I find the interesting
+parts of combat to be not the combat itself, but the decisions that lead to (and derive from) it. Should I fight this enemy
+or run? Should I pop this potion? Should I retreat and lick my wounds, or try to finish them off? And&hellip; would this work
+in a world where you have multiple characters? Would this lead to more engaging gameplay if you can just funnel enemies
+through a corridor, but this time you can <em>also</em> shoot them from afar <em>and</em> circle behind them for a flank? Not to
+mention this would increase the time it takes for a single turn from the press of a button to multiple buttons (and
+trying to remember where every character is in relation to the enemies).</p>
+<p>It stands to reason that the enemies should also be able to do something like the player, otherwise there would be
+a significant imbalance between the two. This means that they would probably have to be spawned as <em>packs</em> of
+enemies rather than individual ones. They&rsquo;d probably need to have different specializations as well, just like
+you can have a fighter, a wizard, and a ranger in a party. And also&hellip; they&rsquo;d have to be smarter than just &ldquo;path towards
+the player&rdquo;. If enemies never react to flanking, then flanking just becomes the most obvious tactic to employ
+every single time. And that&rsquo;s not a decision, so it turns back around to being boring. I know some roguelikes
+have enemies smarter than that, but frankly it seems both pretty hard to implement and overkill for what is meant
+to be a &ldquo;get a basic roguelike going&rdquo; kinda deal.</p>
+<p>Now, it seems like everything I&rsquo;ve talked about for the past few paragraphs would make me go &ldquo;actually, having
+a whole party seems to bring a lot of issues! I should try something different&rdquo;. And yes, part of me did think that,
+but it also enlightened some characteristics we <em>would</em> need to have for the concept to work:</p>
+<ul>
+<li><strong>Exploration should be limited.</strong> Having to press &lsquo;up&rsquo; on 4 characters to have them all move north one tile
+is a no-go.</li>
+<li><strong>Enemies should be unique.</strong> Just like the player can have characters that do different things, enemies should
+be able to do different things as well. An encounter where you&rsquo;re facing 4 orc brutes who just charge at the closest
+character and bump into it is not interesting.</li>
+<li><strong>The encounter <em>itself</em> should be engaging.</strong> This is more of a personal goal. I know there&rsquo;s people who do
+enjoy traditional roguelike combat, but I think it&rsquo;d be a waste to be the combat just bumping into enemies after
+discussing the previous point. My favorite roguelike is <a href="https://te4.org/">Tales of Maj&rsquo;Eyal</a>. I&rsquo;m not planning on
+having that many abilities per character, but every turn should force you to make a decision on what you want to do.</li>
+</ul>
+<h3 id="lets-design-a-roguelike-then">Let&rsquo;s Design a Roguelike, Then</h3>
+<p>I believe I&rsquo;ve found an elegant way to fulfill those conditions, while avoiding the risks I&rsquo;ve mentioned in the previous
+paragraph. The solution is to simply get rid of the dungeon aspect wholesale.</p>
+<p>The basic premise remains the same: you control a party of characters. However, you are now in an arena. And you&rsquo;re
+facing another party of characters. Each character has a class, which defines the abilities you have access to.
+After beating the enemy party, you can upgrade your abilities and learn new ones, then you&rsquo;re thrown into another
+arena match.</p>
+<p>This concept is particularly intriguing to me. The core is pretty simple, and should be possible to do in a limited
+time (well, the ability part scares me because that seems to be something deceptively simple to implement). I am also
+fascinated by the idea of having more utility-focused abilities than what might be relevant in a dungeon. For example,
+a wizard could summon an earthen wall to block line of sight from the enemy ranger. The ranger could then use their
+eagle companion to get vision and decide where to reposition. This would also be very scalable if I decided to keep
+working on this past what the tutorial requires.</p>
+<p>For the moment to moment gameplay, I&rsquo;m envisioning every character having a number of action slots per round. For example,
+you could move and swing your sword, or move twice, or swing your sword and cast <em>cone of cold</em>. Maybe stronger abilities
+could require multiple slots.</p>
+<p>As i&rsquo;m writing this, the idea seems to be turning more into a tactics game than a roguelike. At what point does it actually
+stop being a roguelike? I don&rsquo;t think it particularly matters. I&rsquo;m not really a purist of the genre and I think
+it&rsquo;s more important that I work on something that seems fun to do, rather than something that would be more correct.
+I&rsquo;ll probably just use the tutorial as a rough guideline of what should be done by what point.</p>
+<h3 id="to-c-or-not-to-c">To C or not to C?</h3>
+<p>I usually take projects like these as a way to learn something new about the language I&rsquo;m using. I already went through the
+tutorial by myself a couple years ago on Python, so I knew from the start that&rsquo;s not what I would be using.
+I&rsquo;ve considered both Odin and Zig as possible candidates. I&rsquo;ve used both of them for the first time in recent projects and,
+while I wasn&rsquo;t amazed, I know people <em>really</em> like them. Maybe it would be the perfect chance to find out more why that is.
+However, what dissuaded me is that there&rsquo;s no native bindings for <code>libtcod</code> or similar out of the box, so it would add another layer
+of stuff to do on top of&hellip; you know&hellip; <em>actually making the game</em>. I wanted a more ready-to-go solution.</p>
+<p>I then considered C++. I&rsquo;m not an engineer, but I do use some C++ here and there in my day job. I was also interested in checking
+out some of the more modern features. Yeah, C++ is not really a comfortable language, but I do have <em>some</em> experience with it already.
+Then I remembered how much of a pain setting up the environment for a C++ project is, and how frustrating it is to track down
+some mysterious compiler error sometimes, and changed my mind. I&rsquo;ll use C++ for a &lsquo;for fun&rsquo; project someday, but not now.</p>
+<p>So with that gone, I turned my head towards Rust. People <em>love</em> Rust. And people <em>love</em> telling you they love Rust. I&rsquo;ve tried
+it myself a couple times, but always found it a bit clunky. &ldquo;Maybe it&rsquo;s because I didn&rsquo;t have enough experience!&rdquo; I told myself.
+After all, the last time I touched it was a couple years ago. I started looking into it, and the more I read about it the more
+it seemed like it would be the best option for what I was trying to do. Then I read about the borrow checker. I think Rust can
+work for bigger team projects, where you have engineers dedicated exclusively towards making sure they&rsquo;re writing good code.
+However, I don&rsquo;t want to deal with that, especially on a project like this. I&rsquo;m not trying to write good code, I&rsquo;m trying to get
+a game running. I would trade code cleanliness for comfort in a heartbeat.</p>
+<p>All those options exhausted, I finally looked at C#. I&rsquo;ve had friends tell me C# is the most comfortable language for a while now.
+I myself have looked into it several times, first to use Unity back when I was in high school, then when I found out about Blazor a few years ago.
+The whole environment seems very painless. The community is huge. It&rsquo;s cross platform. There&rsquo;s a library called <a href="https://sadconsole.com/">SadConsole</a> specifically
+for building roguelikes. It just <em>works</em>. So I went for this option. I&rsquo;m very curious to see how I&rsquo;ll feel about it by the end of the project.</p>
+<h3 id="the-implementation">The Implementation</h3>
+<p>Believe it or not, we&rsquo;re finally at the part where stuff is actually happening on my computer.
+The week before the challenge started (it&rsquo;s not really a challenge, but i&rsquo;m not sure how else to refer to it) I made sure to go through
+the tutorial on the SadConsole website. It&rsquo;s incomplete, but it does have all I needed to get started: how to render stuff, and
+how to process keyboard input.</p>
+<p>At the start of the week, I created a new project. The name I&rsquo;ve settled on for now is Sigmarch. It sounds fantasy
+enough, it sounds tactical enough, and I think the -march part works well to evoke the idea of &lsquo;multiple units&rsquo;.</p>
+<p>C# does seem as comfy to use as advertised. SadConsole, similarly, is also pretty intuitive.</p>
+<p>The basic project is set up very similarly to what the website recommends: I spin up a Screen, which holds a Surface, on top of
+which I render the World. Now, the first difference I have to deal with is that I want to control more than one character.
+What&rsquo;s the best way to do that?</p>
+<p>My approach was to just give Actors a Faction whenever they&rsquo;re created, then add all Actors of the same faction to a Queue. The first actor
+in the queue is popped out, and <em>stuff</em> can be done to it. Once the actor is done, we pop the next actor, and so on.
+This keeps going until the Queue is empty, at which point it gets repopulated. This seems reasonable enough to me.
+I&rsquo;ve also gotten to use <code>LINQ</code>, a query system that exists in C#:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#cba6f7">foreach</span> (<span style="color:#f38ba8">var</span> actor <span style="color:#cba6f7">in</span> Actors.Where(actor =&gt; actor.Faction == Faction.Ally))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    ActivatableAllies.Enqueue(actor);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>It&rsquo;s also interesting to me that C# is quite a bit more high level than I&rsquo;m used to, which leads to the previous function being
+somewhat confusing to me. I assume what&rsquo;s happening is that ActivatableAllies now owns a reference to the
+actor which is <em>also</em> in Actors, but this seems a bit alien to me since I&rsquo;m used to having to pass references explicitely.</p>
+<p>The only other noteworthy thing I did was to make movement be reliant on the mouse position, since I&rsquo;m expecting characters to be able to
+move multiple tiles in a single turn.</p>
+<p>This is what I have so far: four units that can move across the map, and a line to show which path they&rsquo;d take
+(there&rsquo;s no actual pathfinding yet though).</p>
 <p>If you want, you can check out the full repo <a href="">at this link</a></p>
 ]]></content:encoded>
     </item>

@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>IrisLikeThePlant (CC BY 4.0)</copyright>
-    <lastBuildDate>Mon, 21 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Developing a Roguelike - Part 1</title>
       <link>http://localhost:1313/blog/01_developing_a_roguelike_part_1/</link>
-      <pubDate>Mon, 21 Jul 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/01_developing_a_roguelike_part_1/</guid>
       <description>&lt;p&gt;While I have been browsing the &lt;a href=&#34;reddit.com/r/roguelikedev&#34;&gt;RoguelikeDev&lt;/a&gt; subreddit for a few years now, I&amp;rsquo;ve always&#xA;been more of a lurker than an active member of the community. I&amp;rsquo;ve decided this time it would be different.&lt;/p&gt;&#xA;&lt;p&gt;I find roguelikes extremely interesting. I enjoy &lt;em&gt;crunchy&lt;/em&gt; games, I enjoy complicated mechanics, and I love learning.&#xA;Roguelikes are usually perfect for this by their very nature. Complexity for the sake of complexity is bad and yadda yadda,&#xA;yes, and I like to turn off my brain after work as much as the next person, but sometimes you just want to bite down&#xA;on some juicy system and I think they provide that in spades.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>While I have been browsing the <a href="reddit.com/r/roguelikedev">RoguelikeDev</a> subreddit for a few years now, I&rsquo;ve always
@@ -146,7 +146,7 @@ move multiple tiles in a single turn.</p>
 <p>This is what I have so far: four units that can move across the map, and a line to show which path they&rsquo;d take
 (there&rsquo;s no actual pathfinding yet though).</p>
 <p><img src="game.gif" alt="Gif of the game"></p>
-<p>If you want, you can check out the full repo <a href="">at this link</a></p>
+<p>If you want, you can check out the full repo <a href="https://github.com/IrisLikeThePlant/Sigmarch">at this link</a></p>
 ]]></content:encoded>
     </item>
   </channel>

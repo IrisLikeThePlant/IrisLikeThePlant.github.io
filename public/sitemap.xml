@@ -3,21 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-07-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2025-07-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/c%23/</loc>
-    <lastmod>2025-07-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/01_developing_a_roguelike_part_1/</loc>
-    <lastmod>2025-07-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/roguelike/</loc>
-    <lastmod>2025-07-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/developing_a_roguelike_part_01/</loc>
     <lastmod>2025-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
